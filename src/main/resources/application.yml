@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: api-gate
+    
+server:
+  port: 8801
+      
+zuul:
+  routes:
+    service-a:
+      path: /service-a/**
+      service-id: service-a
+    service-b:
+      path: /users/**
+      service-id: service-b
+      
+
+    
+      
