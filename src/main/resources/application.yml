@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: order
+          uri: http://localhost:8100
+          predicates:
+            - Path=/api/**
+          filters:
+          - RewritePath=/api/(?<path>.*), /$\{path}
+  main:
+    web-application-type: reactive 
