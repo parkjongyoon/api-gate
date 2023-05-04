@@ -5,7 +5,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: order
+        - id: myAPI
           uri: http://localhost:8100
           predicates:
             - Path=/api/**
